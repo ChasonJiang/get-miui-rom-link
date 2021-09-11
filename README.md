@@ -6,4 +6,4 @@ get miui rom link
 # 需要的环境：
    python3
 # 需要的库：
-   BeautifulSoup，requests，re
+   BeautifulSoup4，requests，re
