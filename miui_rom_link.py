@@ -90,7 +90,7 @@ class MIUI_ROM:
             print(list(self.model_link_table_dic.keys()))
             print()
             print()
-            raise KeyError("This region type was not found")
+            raise KeyError("This model type was not found")
 
         if region in self.model_link_table_dic[model_name].keys():
             rom_link_dic=self.get_rom_link(self.model_link_table_dic[model_name][region])
