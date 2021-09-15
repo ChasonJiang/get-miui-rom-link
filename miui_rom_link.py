@@ -102,7 +102,7 @@ def query_rom_link(model_name,region,rom_cleases,rom_version=None):
             print()
             raise KeyError("This rom version was not found")    
 
-    rom_link_list.sort(key=lambda x: x.split("_")[2],reverse = True)
+    rom_link_list.sort(key=lambda x: x.split("/")[3],reverse = True)
 
     return rom_link_list
 
