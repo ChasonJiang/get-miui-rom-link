@@ -133,7 +133,7 @@ class MIUI_ROM:
         if len(a)==0: return 0
         if a.split(".")[0] == b.split(".")[0]:
             return self.version_comparetor('.'.join(a.split(".")[1:]), '.'.join(b.split(".")[1:]))
-        if not self.contain_english(a):
+        if not self.contain_english(a.split(".")[0]):
             if int(a.split(".")[0]) > int(b.split(".")[0]):
                 return 1
             elif int(a.split(".")[0]) < int(b.split(".")[0]):
@@ -153,7 +153,7 @@ class MIUI_ROM:
 
 if __name__ == '__main__':
     # step 0: set parameters
-    model_name = "edmi"
+    model_name = "umi"
     region = "CN"
     rom_cleases = "recovery"
     rom_version = "stable"
