@@ -85,6 +85,13 @@ class MIUI_ROM:
                 rom_cleases：rom类型  recovery或fastboot
                 rom_version： 卡刷包（recovery）版本 beta 或 stable  注：线刷包无该选项
         '''
+        if not model_name in self.model_link_table_dic.keys():
+            print("Already have:")
+            print(list(self.model_link_table_dic.keys()))
+            print()
+            print()
+            raise KeyError("This region type was not found")
+
         if region in self.model_link_table_dic[model_name].keys():
             rom_link_dic=self.get_rom_link(self.model_link_table_dic[model_name][region])
         else:
@@ -146,7 +153,7 @@ class MIUI_ROM:
 
 if __name__ == '__main__':
     # step 0: set parameters
-    model_name = "umi"
+    model_name = "edmi"
     region = "CN"
     rom_cleases = "recovery"
     rom_version = "stable"
