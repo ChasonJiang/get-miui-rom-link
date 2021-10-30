@@ -11,7 +11,7 @@ class XiaomiRomQuery:
     def __init__(self):
         # fw_yaml_url = "https://xiaomifirmwareupdater.com/data/devices/latest.yml"
         rom_yaml_url = "https://raw.githubusercontent.com/XiaomiFirmwareUpdater/miui-updates-tracker/master/data/latest.yml"
-        self.yaml_data = yaml.load(requests.get(rom_yaml_url).text)
+        self.yaml_data = yaml.load(requests.get(rom_yaml_url).text,Loader=yaml.FullLoader)
         self.branch_map={"stable":"Stable","stable beta":"Stable Beta","beta":'Weekly'}
         self.method={"recovery":"Recovery","fastboot":"Fastboot",}
         self.codename={}
