@@ -36,12 +36,12 @@ class XiaomiRomQuery:
 
     def query_codename(self,model_name,region):
         for i in self.codename:
+            codename = model_name+"_"+region+"_global"
             if i == model_name and region=="cn":
                return model_name
-        codename = model_name+"_"+region+"_global"
-        for i in self.codename:
-            if i == codename:
+            elif i == codename:
                return codename
+
         raise RuntimeError("Could not find {}".format(codename))
 
 
